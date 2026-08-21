@@ -63,6 +63,19 @@ For multi-image requests:
 - Vary camera language instead of only changing backgrounds.
 - Create different visual narratives through composition.
 
+## Face Stability and Long-Shot Composition
+
+In a 16:9 full-body or long shot, the face occupies fewer pixels, so the model may prioritize the body, clothing, environment, and overall composition. Wide-angle lenses, profiles, backlighting, action, and motion blur can make facial drift worse.
+
+Use this correction workflow when identity fidelity matters:
+
+1. Generate a frontal or three-quarter half-body portrait first. Select a sharp, well-lit image as the face-lock identity reference.
+2. Generate the full-body image with a 50–85mm lens, an eye-level camera, and a medium-to-long camera distance. Keep the subject large enough that the face is readable; when facial identity is important, the subject should occupy roughly 60–75% of the frame height.
+3. Require: face clearly visible and in focus, natural facial proportions, no motion blur, no extreme wide-angle distortion, and identity preserved from the face-lock reference.
+4. If the face is only slightly off, locally repair the face while preserving the hair, clothing, pose, lighting, and background. If it is severely deformed, regenerate from the face-lock reference instead of relying on smoothing or upscaling.
+
+For a nine-image series, prefer a 3/3/3 balance by default: three full-body images, three medium shots, and three close or half-body portraits. This preserves narrative variety while ensuring that several images provide enough facial detail for stable identity.
+
 ## Identity Lock
 
 Fixed:

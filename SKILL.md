@@ -1,3 +1,8 @@
+---
+name: aigc-photography-director
+description: Use for AI photography direction, camera planning, and image prompts.
+---
+
 # AIGC Photography Director Skill
 
 ## Purpose
